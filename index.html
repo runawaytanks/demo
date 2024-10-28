@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Demo</title>
+</head>
+
+<body>
+    <main class="container">
+        <article>
+            <header>
+                <b>👨‍💻 Player 1</b>
+                <sup>[Up, Left, Down, Right]</sup>
+            </header>
+            <fieldset>
+                <input id="player1_prediction" type="checkbox">
+                <label for="player1_prediction">Client Prediction</label>
+                <input id="player1_reconciliation" type="checkbox">
+                <label for="player1_reconciliation">Server Reconciliation</label>
+                <input id="player1_interpolation" type="checkbox">
+                <label for="player1_interpolation">Entity Interpolation</label>
+            </fieldset>
+            <fieldset class="grid">
+                <label for="player1_network_rtt">Network Round Trip Time (ms)
+                    <input id="player1_network_rtt" type="number">
+                </label>
+                <label for="player1_network_rtt_increase">Increase RTT every 5s by (ms)
+                    <input id="player1_network_rtt_increase" type="number">
+                </label>
+            </fieldset>
+            <canvas id="player1_canvas"></canvas>
+            <i id="player1_status"></i>
+        </article>
+
+        <article>
+            <header>
+                <b>🤖 Server</b>
+            </header>
+            <fieldset class="grid">
+                <label for="world_update_interval">World Update Interval (ms)
+                    <input id="world_update_interval" type="number">
+                </label>
+                <label for="client_simulation_offset">Client Simulation Offset (ms)
+                    <input id="client_simulation_offset" type="number">
+                </label>
+                <label for="entity_interpolation_delay">Entity Interpolation Delay (ms)
+                    <input id="entity_interpolation_delay" type="number">
+                </label>
+            </fieldset>
+            <canvas id="server_canvas"></canvas>
+            <i id="server_status"></i>
+        </article>
+
+        <article>
+            <header>
+                <b>👩‍💻 Player 2</b>
+                <sup>[W, A, S, D]</sup>
+            </header>
+            <fieldset>
+                <input id="player2_prediction" type="checkbox">
+                <label for="player2_prediction">Client Prediction</label>
+                <input id="player2_reconciliation" type="checkbox">
+                <label for="player2_reconciliation">Server Reconciliation</label>
+                <input id="player2_interpolation" type="checkbox">
+                <label for="player2_interpolation">Entity Interpolation</label>
+            </fieldset>
+            <fieldset class="grid">
+                <label for="player2_network_rtt">Network Round Trip Time (ms)
+                    <input id="player2_network_rtt" type="number">
+                </label>
+                <label for="player2_network_rtt_increase">Increase RTT every 5s by (ms)
+                    <input id="player2_network_rtt_increase" type="number">
+                </label>
+            </fieldset>
+            <canvas id="player2_canvas"></canvas>
+            <i id="player2_status"></i>
+        </article>
+    </main>
+
+    <script src="js/canvas.js"></script>
+    <script src="js/network.js"></script>
+    <script src="js/tank.js"></script>
+    <script src="js/client.js"></script>
+    <script src="js/server.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
